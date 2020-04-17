@@ -12,13 +12,13 @@ gulp.task('sass', () => {
 		.pipe(postcss([
 			autoprefixer()
 		]))
-		.pipe(gulp.dest('./css'));
+		.pipe(gulp.dest('./docs/css'));
 });
 
 gulp.task('babel', () => {
 	return gulp.src('./main.js')
 		.pipe(babel())
-		.pipe(gulp.dest('./js'))
+		.pipe(gulp.dest('./docs/js'))
 });
 
 gulp.task('default', gulp.parallel('sass', 'babel'));
