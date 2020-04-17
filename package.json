@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "server": "http-server -p 9000 .",
+    "server": "http-server -p 9000 docs",
     "gulp": "gulp"
   },
   "devDependencies": {
