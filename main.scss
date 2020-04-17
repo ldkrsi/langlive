@@ -1,0 +1,13 @@
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.left-section {
+	width: 100%;
+	video {
+		width: auto;
+		height: 85vh;
+		max-width: 100%;
+	}
+}

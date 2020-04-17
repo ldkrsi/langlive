@@ -1,0 +1,29 @@
+{
+  "name": "langlive",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "server": "http-server -p 9000 .",
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "http-server": "^0.12.1",
+    "node-sass": "^4.13.1"
+  },
+  "browserslist": [
+    "ie >= 11",
+    "Edge >= 12",
+    "Firefox >= 42",
+    "Chrome >= 34",
+    "Safari >= 8",
+    "ios_saf >= 6.1",
+    "Samsung >= 4"
+  ]
+}

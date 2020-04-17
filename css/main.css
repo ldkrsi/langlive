@@ -1,0 +1,13 @@
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.left-section {
+  width: 100%; }
+  .left-section video {
+    width: auto;
+    height: 85vh;
+    max-width: 100%; }
