@@ -7,7 +7,7 @@
 	<link rel="preconnect" href="https://video-wshls.langlive.com" crossorigin>
 	<link rel="preconnect" href="https://video-tx.lv-play.com" crossorigin>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>浪LIVE網頁播放器</title>
 	<meta name="description" content="浪LIVE網頁播放器，免裝APP，潛水掛聽專用">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -18,13 +18,13 @@
 	<p>免裝APP，潛水掛聽專用</p>
 	<div class="container">
 		<div class="left-section">
-			<video controls playsinline webkit-playsinline></video>
+			<video controls playsinline muted webkit-playsinline></video>
 		</div>
 		<div class="right-section">
-			<div class="input-id">
-				<input type="text" id="input" placeholder="輸入浪LIVE ID">
-				<button id="change-btn">轉台</button>
-			</div>
+			<form class="input-id" method="get">
+				<input type="text" id="input" name="id" placeholder="輸入浪LIVE ID">
+				<button id="change-btn" type="submit">轉台</button>
+			</form>
 		</div>
 	</div>
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.13.2/hls.min.js"></script>

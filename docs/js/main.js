@@ -5,8 +5,11 @@ function playVideo(video, src) {
 
   if (Hls.isSupported()) {
     var hls = new Hls({
-      liveBackBufferLength: 120,
-      maxBufferLength: 10
+      liveBackBufferLength: 300,
+      maxBufferLength: 5,
+      liveSyncDuration: 10,
+      liveMaxLatencyDuration: 30,
+      liveDurationInfinity: true
     });
     hls.loadSource(src);
     hls.attachMedia(video);
@@ -14,7 +17,7 @@ function playVideo(video, src) {
       video.play();
     });
   } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = videoSrc;
+    video.src = src;
     video.addEventListener('loadedmetadata', function () {
       video.play();
     });
@@ -24,14 +27,6 @@ function playVideo(video, src) {
 (function () {
   var url = new URL(location.href);
   var id = url.searchParams.get('id');
-  document.getElementById('change-btn').addEventListener('click', function () {
-    var value = document.getElementById('input').value;
-
-    if (value) {
-      url.searchParams.set('id', value);
-      window.location = url.toString();
-    }
-  });
 
   if (!id) {
     return;
