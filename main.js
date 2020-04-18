@@ -23,9 +23,18 @@ function playVideo(video, src) {
 (function () {
 	const url = new URL(location.href);
 	const id = url.searchParams.get('id');
+
+	document.getElementById('change-btn').addEventListener('click', () => {
+		let value = document.getElementById('input').value;
+		if (value) {
+			url.searchParams.set('id', value);
+			window.location = url.toString();
+		}
+	});
 	if (!id) {
 		return;
 	}
+	document.getElementById('input').value = id;
 
 	const videoSrc1 = `https://video-wshls.langlive.com/live/${id}Y/playlist.m3u8`;
 	const videoSrc2 = `https://video-tx.lv-play.com/live/${id}Y.m3u8`;
@@ -36,14 +45,7 @@ function playVideo(video, src) {
 	}).catch(() => {
 		playVideo(v, videoSrc2);
 	});
-
-	document.getElementById('input').value = id;
-	document.getElementById('change-btn').addEventListener('click', () => {
-		let value = document.getElementById('input').value;
-		if (value) {
-			url.searchParams.set('id', value);
-			window.location = url.toString();
-		}
-	});
 })();
+
+
 
