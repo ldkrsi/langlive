@@ -1,10 +1,5 @@
 'use strict';
 
-const id = (new URLSearchParams(window.location.search)).get('id');
-const videoSrc1 = `https://video-wshls.langlive.com/live/${id}Y/playlist.m3u8`;
-const videoSrc2 = `https://video-tx.lv-play.com/live/${id}Y.m3u8`;
-
-
 function playVideo(video, src) {
 	const Hls = window.Hls;
 	if (Hls.isSupported()) {
@@ -26,25 +21,29 @@ function playVideo(video, src) {
 }
 
 (function () {
+	const url = new URL(location.href);
+	const id = url.searchParams.get('id');
 	if (!id) {
 		return;
 	}
 
+	const videoSrc1 = `https://video-wshls.langlive.com/live/${id}Y/playlist.m3u8`;
+	const videoSrc2 = `https://video-tx.lv-play.com/live/${id}Y.m3u8`;
+
 	const v = document.querySelector('video');
-	fetch(videoSrc1).then((response) => {
+	fetch(videoSrc1).then(() => {
 		playVideo(v, videoSrc1);
 	}).catch(() => {
 		playVideo(v, videoSrc2);
 	});
+
+	document.getElementById('input').value = id;
+	document.getElementById('change-btn').addEventListener('click', () => {
+		let value = document.getElementById('input').value;
+		if (value) {
+			url.searchParams.set('id', value);
+			window.location = url.toString();
+		}
+	});
 })();
 
-/*
-fetch('https://video-wshls.langlive.com/live/2028726Y/playlist.m3u8').then((response) => {
-	console.log(response.status);
-});
-
-fetch('https://video-wshls.langlive.com/live/3794774Y/playlist.m3u8').then((response) => {
-	console.log(response.status);
-}).catch(() => {
-	console.log('error');
-});*/

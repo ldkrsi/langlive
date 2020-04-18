@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-hant">
 <head>
+	<script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.7/polyfill.min.js"></script>
+	<script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/npm/url-polyfill@1.1.8/url-polyfill.min.js"></script>
+	<link rel="preconnect" href="https://video-wshls.langlive.com" crossorigin>
+	<link rel="preconnect" href="https://video-tx.lv-play.com" crossorigin>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>浪LIVE網頁播放器</title>
@@ -15,8 +20,14 @@
 		<div class="left-section">
 			<video controls playsinline webkit-playsinline></video>
 		</div>
+		<div class="right-section">
+			<div class="input-id">
+				<input type="text" id="input" placeholder="輸入浪LIVE ID">
+				<button id="change-btn">轉台</button>
+			</div>
+		</div>
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.13.2/hls.min.js"></script>
-	<script src="js/main.js"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.13.2/hls.min.js"></script>
+	<script defer src="js/main.js"></script>
 </body>
 </html>
