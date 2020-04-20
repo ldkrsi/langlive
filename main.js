@@ -4,10 +4,10 @@ function playVideo(video, src) {
 	const Hls = window.Hls;
 	if (Hls.isSupported()) {
 		var hls = new Hls({
-			liveBackBufferLength: 120,
+			liveBackBufferLength: 30,
 			maxBufferLength: 5,
-			liveSyncDuration: 10,
-			liveMaxLatencyDuration: 30,
+			liveSyncDuration: 0,
+			liveMaxLatencyDuration: 5,
 			liveDurationInfinity: true
 		});
 		hls.loadSource(src);
@@ -42,6 +42,3 @@ function playVideo(video, src) {
 		playVideo(v, videoSrc2);
 	});
 })();
-
-
-
