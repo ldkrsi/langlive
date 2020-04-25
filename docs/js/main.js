@@ -6,9 +6,9 @@ function playVideo(video, src) {
   if (Hls.isSupported()) {
     var hls = new Hls({
       liveBackBufferLength: 30,
-      maxBufferLength: 6,
-      liveSyncDuration: 1,
-      liveMaxLatencyDuration: 6,
+      maxBufferLength: 5,
+      liveSyncDurationCount: 1,
+      liveMaxLatencyDurationCount: 2,
       liveDurationInfinity: true
     });
     hls.loadSource(src);
