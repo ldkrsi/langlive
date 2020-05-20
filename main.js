@@ -33,7 +33,7 @@ function playVideo(video, src) {
 	document.getElementById('input').value = id;
 
 	const videoSrc1 = `https://video-wshls.langlive.com/live/${id}Y/playlist.m3u8`;
-	const videoSrc2 = `https://video-tx.lv-play.com/live/${id}Y.m3u8`;
+	const videoSrc2 = `https://video-tx.lv-show.com/live/${id}Y.m3u8`;
 
 	const v = document.querySelector('video');
 	fetch(videoSrc1).then(() => {
